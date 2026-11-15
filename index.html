@@ -1,0 +1,1371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Gopika A | AI & Data Science Portfolio</title>
+
+<meta name="description" content="Portfolio of Gopika A, AI and Data Science student, UI/UX enthusiast and aspiring web developer.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+/* GENERAL */
+
+:root {
+    --bg: #0D1024;
+    --surface: #171B36;
+    --surface2: #202546;
+    --text: #F4F5FF;
+    --muted: #B3B9D6;
+    --accent: #8277FF;
+    --cyan: #25C9E8;
+    --border: #343A66;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 85px;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    max-width: 1150px;
+    width: 90%;
+    margin: auto;
+}
+
+section {
+    padding: 85px 0;
+    scroll-margin-top: 60px;
+}
+
+.section-title {
+    font-size: 34px;
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-title span {
+    color: var(--accent);
+}
+
+/* NAVBAR */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(13,16,36,0.96);
+    border-bottom: 1px solid var(--border);
+}
+
+.navbar {
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: 800;
+    color: #65A5FF;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--muted);
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--cyan);
+}
+
+.theme-btn {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 9px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+/* HOME / HERO */
+
+.hero {
+    min-height: 720px;
+    display: flex;
+    align-items: center;
+    background:
+        radial-gradient(circle at 85% 25%, #29236A 0%, transparent 40%),
+        var(--bg);
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 60px;
+    padding: 75px 0;
+}
+
+.welcome {
+    display: inline-block;
+    padding: 7px 18px;
+    border: 1px solid #343A75;
+    border-radius: 30px;
+    background: rgba(100,100,200,0.10);
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 5vw, 58px);
+    line-height: 1.2;
+    font-weight: 800;
+    margin-bottom: 15px;
+    letter-spacing: -1.5px;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, #8580FF, #24C8E8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero-description {
+    color: var(--muted);
+    font-size: 16px;
+    max-width: 570px;
+    margin-bottom: 30px;
+}
+
+/* NOTEBOOK ROLE ANIMATION */
+
+#heroRoleBook {
+    width: 100%;
+    max-width: 580px;
+    height: 155px;
+    position: relative;
+    margin: 15px 0 35px;
+    perspective: 800px;
+}
+
+#heroRoleBook .role-paper {
+    position: absolute;
+    top: 48px;
+    left: 0;
+    width: 100%;
+    height: 82px;
+    box-sizing: border-box;
+    padding: 15px 30px;
+    text-align: center;
+    background: #f8f7f2;
+    color: #111;
+    border: 2px solid #d5d3cc;
+    border-radius: 10px;
+    box-shadow:
+        4px 5px 0 #222,
+        7px 9px 0 #aaa,
+        10px 12px 0 #222;
+    font-size: clamp(22px, 3vw, 36px);
+    font-weight: 800;
+    opacity: 0;
+    transform-origin: top center;
+    backface-visibility: hidden;
+    animation: notebookPage 8s infinite;
+}
+
+#heroRoleBook .paper-1 { animation-delay: 0s; }
+#heroRoleBook .paper-2 { animation-delay: 4s; }
+
+#heroRoleBook .role-rings {
+    position: absolute;
+    top: 29px;
+    left: 10px;
+    width: 96%;
+    height: 25px;
+    display: flex;
+    justify-content: space-around;
+    z-index: 5;
+}
+
+#heroRoleBook .role-rings span {
+    width: 13px;
+    height: 25px;
+    border: 3px solid #aaa;
+    border-bottom: none;
+    border-radius: 12px 12px 0 0;
+    transform: rotate(-8deg);
+}
+
+@keyframes notebookPage {
+    0%, 4% {
+        opacity: 0;
+        transform: rotateX(-70deg) translateY(20px);
+    }
+    10%, 44% {
+        opacity: 1;
+        transform: rotateX(0deg) translateY(0);
+    }
+    50%, 100% {
+        opacity: 0;
+        transform: rotateX(65deg) translateY(-15px);
+    }
+}
+
+/* BUTTONS */
+
+.btns {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-top: 32px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    min-width: 180px;
+    height: 58px;
+    padding: 0 25px;
+    border-radius: 50px;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 700;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.btn.fill {
+    color: #101329;
+    background: linear-gradient(90deg, #8277FF, #27C5E8);
+    border: 2px solid transparent;
+}
+
+.btn.line {
+    color: white;
+    background: transparent;
+    border: 2px solid #8277FF;
+}
+
+/* PROFILE PHOTO */
+
+.hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.photo-frame {
+    width: 340px;
+    height: 510px;
+    padding: 7px;
+    border-radius: 26px;
+    background: linear-gradient(135deg, #8277FF, #25C9E8);
+    box-shadow: 0 15px 45px rgba(100,100,255,0.22);
+    overflow: hidden;
+}
+
+.photo-frame img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+    object-position: center center;
+    border: 4px solid var(--bg);
+}
+
+/* ABOUT */
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 35px;
+    align-items: start;
+}
+
+.about-text p {
+    color: var(--muted);
+    margin-bottom: 18px;
+}
+
+.about-info {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 25px;
+    border-radius: 15px;
+}
+
+.about-info div {
+    margin-bottom: 17px;
+}
+
+.about-info div:last-child {
+    margin-bottom: 0;
+}
+
+.about-info strong {
+    display: block;
+    color: var(--cyan);
+}
+
+.about-info p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* SKILLS */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.skill-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    padding: 25px;
+}
+
+.skill-card h3 {
+    color: var(--cyan);
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    list-style: none;
+}
+
+.chips li {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    color: var(--muted);
+}
+
+/* EXPERIENCE / HACKATHONS */
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.experience-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    border-radius: 12px;
+    padding: 25px;
+}
+
+.experience-card h3 {
+    font-size: 19px;
+    margin-bottom: 8px;
+}
+
+.experience-card .place {
+    color: var(--cyan);
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.experience-card p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* PROJECTS */
+
+.project-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 22px;
+}
+
+.project-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.project-heading h3 {
+    font-size: 20px;
+}
+
+.project-heading time {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.project-stack {
+    color: var(--cyan);
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.project-card ul {
+    padding-left: 22px;
+    color: var(--muted);
+}
+
+.project-card li {
+    margin-bottom: 8px;
+}
+
+/* EDUCATION */
+
+.timeline {
+    max-width: 850px;
+    margin: auto;
+    border-left: 3px solid var(--border);
+    padding-left: 30px;
+    list-style: none;
+}
+
+.timeline li {
+    position: relative;
+    margin-bottom: 35px;
+}
+
+.timeline li::before {
+    content: "";
+    position: absolute;
+    left: -39px;
+    top: 8px;
+    height: 14px;
+    width: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 3px solid var(--bg);
+}
+
+.timeline h3 {
+    font-size: 19px;
+    margin-bottom: 5px;
+}
+
+.timeline p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.timeline .score {
+    color: var(--cyan);
+    font-weight: 700;
+}
+
+/* CERTIFICATIONS */
+
+.cert-list {
+    list-style: none;
+    display: grid;
+    gap: 13px;
+}
+
+.cert-list li {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.cert-list span {
+    color: var(--cyan);
+}
+
+/* LEADERSHIP */
+
+.leadership-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.leadership-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 23px;
+}
+
+.leadership-card h3 {
+    color: var(--cyan);
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+.leadership-card p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* CONTACT */
+
+.contact-description {
+    text-align: center;
+    color: var(--muted);
+    max-width: 650px;
+    margin: 0 auto 30px;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.contact-links a {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 13px 20px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* FOOTER */
+
+footer {
+    border-top: 1px solid var(--border);
+    text-align: center;
+    padding: 25px;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* LIGHT THEME */
+
+body.light-theme {
+    --bg: #EEF1F8;
+    --surface: #FFFFFF;
+    --surface2: #E5E8F6;
+    --text: #1B2240;
+    --muted: #555F7E;
+    --accent: #4B4BD0;
+    --cyan: #287BAF;
+    --border: #C9D0E4;
+}
+
+body.light-theme .btn.line {
+    color: var(--text);
+}
+
+body.light-theme .photo-frame img {
+    border-color: var(--bg);
+}
+
+/* HOVER: light outline + zoom (grows outward, so no blinking) */
+
+.project-card,
+.skill-card,
+.leadership-card,
+.experience-card,
+.cert-list li,
+.about-info,
+.btn,
+.contact-links a {
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    will-change: transform;
+}
+
+.project-card:hover,
+.skill-card:hover,
+.leadership-card:hover,
+.experience-card:hover,
+.cert-list li:hover,
+.about-info:hover {
+    transform: scale(1.02);
+    border-color: rgba(130, 119, 255, 0.55);
+    box-shadow: 0 0 0 1px rgba(130, 119, 255, 0.35);
+}
+
+.btn:hover,
+.contact-links a:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 0 1px rgba(130, 119, 255, 0.35);
+}
+
+.contact-links a:hover {
+    border-color: rgba(130, 119, 255, 0.55);
+}
+
+.btn.line:hover {
+    border-color: rgba(130, 119, 255, 0.9);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px) {
+
+    .hero-content {
+        gap: 30px;
+    }
+
+    .photo-frame {
+        width: 280px;
+        height: 420px;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .leadership-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+}
+
+@media(max-width:700px) {
+
+    .navbar {
+        flex-wrap: wrap;
+        padding: 15px 0;
+    }
+
+    .nav-links {
+        order: 3;
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 5px;
+    }
+
+    .hero {
+        min-height: auto;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 65px 0;
+    }
+
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-image {
+        grid-row: 1;
+    }
+
+    .photo-frame {
+        width: 240px;
+        height: 360px;
+    }
+
+    .btns {
+        justify-content: center;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-grid,
+    .experience-grid,
+    .leadership-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+
+    .project-card {
+        padding: 22px;
+    }
+
+    section {
+        padding: 60px 0;
+    }
+}
+
+@media(max-width:420px) {
+
+    .btns {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn {
+        width: 210px;
+        min-width: 210px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<header>
+<div class="container">
+
+<nav class="navbar">
+
+<a href="#home" class="logo">Gopika</a>
+
+<ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#certifications">Certifications</a></li>
+    <li><a href="#leadership">Activities</a></li>
+    <li><a href="#contact">Contact</a></li>
+</ul>
+
+<button class="theme-btn" id="themeBtn" type="button">
+Theme
+</button>
+
+</nav>
+</div>
+</header>
+
+<main>
+
+<!-- HOME -->
+
+<section class="hero" id="home">
+
+<div class="container hero-content">
+
+<div class="hero-text">
+
+<span class="welcome">👋 Welcome to my portfolio</span>
+
+<h1>
+Hello, I'm <span class="gradient-text">Gopika A</span>
+</h1>
+
+<div id="heroRoleBook">
+
+    <div class="role-rings">
+        <span></span><span></span><span></span>
+        <span></span><span></span><span></span>
+        <span></span><span></span><span></span>
+        <span></span><span></span><span></span>
+    </div>
+
+    <div class="role-paper paper-1">UI/UX Designer</div>
+    <div class="role-paper paper-2">Aspiring Web Developer</div>
+
+</div>
+
+<p class="hero-description">
+I build machine learning and NLP projects in Python and design
+clean, user-friendly interfaces in Figma. I'm looking for
+opportunities in AI, Data Science, or UI/UX design.
+</p>
+
+<div class="btns">
+
+<a class="btn fill" href="Gopika_Resume.html" target="_blank" rel="noopener">
+    View Resume
+</a>
+
+<a class="btn line" href="#contact">
+Get In Touch
+</a>
+
+</div>
+
+</div>
+
+<!-- PROFILE PHOTO -->
+
+<div class="hero-image">
+
+<div class="photo-frame">
+
+<img src="photo.jpeg" alt="Gopika A professional portrait">
+
+</div>
+
+</div>
+
+</div>
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<div class="container">
+
+<h2 class="section-title">
+About <span>Me</span>
+</h2>
+
+<div class="about-content">
+
+<div class="about-text">
+
+<p>
+I'm a B.Tech Artificial Intelligence and Data Science student with a strong
+interest in Machine Learning, NLP, and UI/UX Design. I enjoy creating clean,
+user-friendly digital experiences and turning ideas into practical solutions.
+I have hands-on experience with Python, Pandas, NumPy, MySQL, HTML, CSS, and
+Figma, along with experience working on AI projects and hackathons. I'm
+currently looking for opportunities where I can improve my technical skills,
+learn new technologies, and contribute to meaningful projects.
+</p>
+
+<p>
+Alongside technical development, I am interested in UI/UX design,
+including user research, wireframing, prototyping and designing
+user-friendly interfaces.
+</p>
+
+<p>
+I have also participated in college activities and hackathons,
+which helped me improve my communication, creativity,
+leadership and teamwork skills.
+</p>
+
+</div>
+
+<div class="about-info">
+
+<div>
+<strong>Location</strong>
+<p>Rasipuram, Namakkal, Tamil Nadu</p>
+</div>
+
+<div>
+<strong>Degree</strong>
+<p>B.Tech AI and Data Science</p>
+</div>
+
+<div>
+<strong>College</strong>
+<p>Velalar College of Engineering and Technology</p>
+</div>
+
+<div>
+<strong>Interests</strong>
+<p>UI/UX Design / AI</p>
+</div>
+
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+<div class="container">
+
+<h2 class="section-title">
+My <span>Skills</span>
+</h2>
+
+<div class="skills-grid">
+
+<div class="skill-card">
+<h3>Programming</h3>
+<ul class="chips">
+<li>Java (OOPs concept)</li>
+<li>Python (Basic)</li>
+<li>MySQL</li>
+</ul>
+</div>
+
+<div class="skill-card">
+<h3>Data Analysis</h3>
+<ul class="chips">
+<li>Pandas</li>
+<li>NumPy</li>
+<li>Microsoft Excel</li>
+</ul>
+</div>
+
+<div class="skill-card">
+<h3>AI &amp; Machine Learning</h3>
+<ul class="chips">
+<li>Machine Learning</li>
+<li>NLP</li>
+<li>Deep Learning</li>
+<li>Computer Vision</li>
+</ul>
+</div>
+
+<div class="skill-card">
+<h3>UI/UX Design</h3>
+<ul class="chips">
+<li>Figma</li>
+<li>Wireframing</li>
+<li>Prototyping</li>
+<li>User Research</li>
+<li>UI Design</li>
+</ul>
+</div>
+
+<div class="skill-card">
+<h3>Web Development</h3>
+<ul class="chips">
+<li>HTML</li>
+</ul>
+</div>
+
+<div class="skill-card">
+<h3>Tools</h3>
+<ul class="chips">
+<li>VS Code</li>
+<li>Eclipse</li>
+<li>IDLE</li>
+<li>GitHub</li>
+<li>Canva</li>
+</ul>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- EXPERIENCE / HACKATHONS -->
+
+<section id="experience">
+<div class="container">
+
+<h2 class="section-title">
+Hackathons &amp; <span>Experience</span>
+</h2>
+
+<div class="experience-grid">
+
+<div class="experience-card">
+
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap;">
+
+<h3>Smart India Hackathon 2025</h3>
+
+<a href="sih.jpeg"
+target="_blank"
+rel="noopener noreferrer"
+style="color: var(--cyan); font-size: 13px; font-weight: 600; white-space: nowrap;">
+📄 View Certificate ↗
+</a>
+
+</div>
+
+<p class="place">VCET, Erode</p>
+
+<p>
+Hybrid Renewable Dewatering System: Developed a concept
+for a solar and wind-powered dewatering system integrating
+renewable energy sources for continuous water pumping.
+</p>
+
+</div>
+
+<div class="experience-card">
+
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap;">
+
+<h3>Smart Motion Hackathon 2026</h3>
+
+<a href="CIT.jpeg"
+target="_blank"
+rel="noopener noreferrer"
+style="color: var(--cyan); font-size: 13px; font-weight: 600; white-space: nowrap;">
+📄 View Certificate ↗
+</a>
+
+</div>
+
+<p class="place">CIT, Chennai</p>
+
+<p>
+Electric Motor Design Without Rare Earth Magnets,
+with intelligent sensors, real-time monitoring,
+thermal stability and sustainable manufacturing.
+</p>
+
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+<div class="container">
+
+<h2 class="section-title">
+My <span>Projects</span>
+</h2>
+
+<!-- PROJECT 1: AI SKIN CANCER DETECTOR -->
+
+<div class="project-card"
+     style="display: flex; justify-content: space-between; align-items: center; gap: 25px; flex-wrap: wrap;">
+
+    <div style="flex: 1 1 500px;">
+
+        <div class="project-heading">
+            <h3>AI Skin Cancer Detector – Explainable &amp; Longitudinal Skin Lesion Screening</h3>
+            <time>October 2026</time>
+        </div>
+
+        <p class="project-stack">
+            Python | Deep Learning | Computer Vision | Explainable AI
+        </p>
+
+        <ul>
+            <li>Developing an AI-based system to analyze skin lesion images for screening and risk assessment.</li>
+            <li>Using image analysis and explainable AI to make predictions more understandable.</li>
+            <li>Combining patient information with image comparison to monitor lesion changes over time.</li>
+            <li>Designing an interpretable AI-assisted framework for early screening and risk monitoring.</li>
+        </ul>
+
+    </div>
+
+    <div style="flex: 0 0 200px; background: var(--surface2); border: 1px solid var(--accent); border-radius: 15px; padding: 25px 15px; text-align: center;">
+
+        <h3 style="color: var(--cyan); font-size: 17px; margin-bottom: 10px;">PROJECT DEMO</h3>
+
+        <p style="color: var(--muted); font-size: 13px; margin-bottom: 18px;">
+            Explore the live DermaGuard AI application.
+        </p>
+
+        <a href="https://dermaguard-ai.netlify.app/"
+           target="_blank"
+           rel="noopener noreferrer"
+           style="display: inline-block; padding: 11px 20px; background: linear-gradient(90deg, #8277FF, #25C9E8); color: #101329; border-radius: 25px; font-size: 13px; font-weight: 700;">
+            ↗ LIVE DEMO
+        </a>
+
+    </div>
+
+</div>
+
+<!-- PROJECT 2: SHOP SENSE AI -->
+
+<div class="project-card"
+     style="display: flex; justify-content: space-between; align-items: center; gap: 25px; flex-wrap: wrap;">
+
+    <div style="flex: 1 1 500px;">
+
+        <div class="project-heading">
+            <h3>ShopSense AI – Customer Review Sentiment &amp; Trust Analyzer</h3>
+            <time>March 2025</time>
+        </div>
+
+        <p class="project-stack">
+            Python | NLP | Machine Learning | Data Analysis
+        </p>
+
+        <ul>
+            <li>Built a system to classify customer reviews into positive, negative and neutral sentiment categories.</li>
+            <li>Applied NLP techniques, text preprocessing and machine learning for customer feedback analysis.</li>
+            <li>Implemented fake and spam review detection using review patterns and text classification.</li>
+            <li>Generated product insights and trust analysis to support e-commerce sellers.</li>
+        </ul>
+
+    </div>
+
+    <div style="flex: 0 0 200px; background: var(--surface2); border: 1px solid var(--accent); border-radius: 15px; padding: 25px 15px; text-align: center;">
+
+        <h3 style="color: var(--cyan); font-size: 17px; margin-bottom: 10px;">PROJECT DEMO</h3>
+
+        <p style="color: var(--muted); font-size: 13px; margin-bottom: 18px;">
+            Explore the live ShopSense AI application.
+        </p>
+
+        <a href="https://gopikaanbu-dev.github.io/TrustWatch/"
+           target="_blank"
+           rel="noopener noreferrer"
+           style="display: inline-block; padding: 11px 20px; background: linear-gradient(90deg, #8277FF, #25C9E8); color: #101329; border-radius: 25px; font-size: 13px; font-weight: 700;">
+            ↗ LIVE DEMO
+        </a>
+
+    </div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- EDUCATION -->
+
+<section id="education">
+
+<div class="container">
+
+<h2 class="section-title">
+My <span>Education</span>
+</h2>
+
+<ol class="timeline">
+
+<li>
+<h3>B.Tech – Artificial Intelligence and Data Science</h3>
+<p>Velalar College of Engineering and Technology, Erode (Anna University)</p>
+<p>2023–2027 | <span class="score">CGPA: 8.02 / 10</span></p>
+</li>
+
+<li>
+<h3>Higher Secondary Certificate (HSC)</h3>
+<p>SRV Hi-Tech Matric Higher Secondary School, Namakkal</p>
+<p>2022–2023 | <span class="score">71.6%</span></p>
+</li>
+
+<li>
+<h3>Secondary School Leaving Certificate (SSLC)</h3>
+<p>SRV Hi-Tech Matric Higher Secondary School, Namakkal</p>
+<p>2020–2021 | <span class="score">100%</span></p>
+</li>
+
+</ol>
+
+</div>
+</section>
+
+<!-- CERTIFICATIONS -->
+
+<section id="certifications">
+
+<div class="container">
+
+<h2 class="section-title">
+Certifications &amp; <span>Training</span>
+</h2>
+
+<ul class="cert-list">
+
+<li>
+Data Science and Artificial Intelligence Internship Training – YBI Foundation
+<span>
+2024 |
+<a href="Internship.jpg" target="_blank" rel="noopener" style="color: var(--cyan);">View Certificate ↗</a>
+</span>
+</li>
+
+<li>
+Basics of Python – Infosys Springboard
+<span>
+2024 |
+<a href="python-basics.jpg" target="_blank" rel="noopener" style="color: var(--cyan);">View Certificate ↗</a>
+</span>
+</li>
+
+<li>
+Programming Fundamentals using Python – Infosys Springboard
+<span>
+2025 |
+<a href="infosys-python.jpg" target="_blank" rel="noopener" style="color: var(--cyan);">View Certificate ↗</a>
+</span>
+</li>
+
+<li>
+5G Networks and IoT Networks Workshop – Nandha Engineering College
+<span>
+2025 |
+<a href="Nandhaclg.jpeg" target="_blank" rel="noopener">
+View Certificate ↗
+</a>
+</span>
+</li>
+
+<li>
+Blockchain and Cloud Computing Workshop – Ways2me
+<span>
+2024 |
+<a href="blockchain.jpg" target="_blank" rel="noopener" style="color: var(--cyan);">View Certificate ↗</a>
+</span>
+</li>
+
+<li>
+Frontend Using React With CRUD Operation – Kongunadu Engineering College
+<span>
+2026 |
+<a href="Kongunadu.jpeg" target="_blank" rel="noopener" style="color: var(--cyan);">View Certificate ↗</a>
+</span>
+</li>
+
+</ul>
+
+</div>
+</section>
+
+<!-- LEADERSHIP -->
+
+<section id="leadership">
+
+<div class="container">
+
+<h2 class="section-title">
+Leadership &amp; <span>Activities</span>
+</h2>
+
+<div class="leadership-grid">
+
+<div class="leadership-card">
+<h3>Rotaract Club – Office Bearer</h3>
+<span>2023–2025</span>
+<p>
+Organized tree planting, blood donation drives,
+health screening camps and supply distributions for local orphanages.
+</p>
+</div>
+
+<div class="leadership-card">
+<h3>Fine Arts Club – Coordinator</h3>
+<span>2024–2025</span>
+<p>
+Organized inter-collegiate cultural festivals,
+art workshops and gallery exhibitions.
+</p>
+</div>
+
+<div class="leadership-card">
+<h3>Green Club – Member</h3>
+<span>2023–2024</span>
+<p>
+Participated in tree plantation,
+awareness programs and community service.
+</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<div class="container">
+
+<h2 class="section-title">
+Get In <span>Touch</span>
+</h2>
+
+<p class="contact-description">
+I'm open to internships and entry-level opportunities in
+Artificial Intelligence, Data Science, Web Development
+and UI/UX Design. Feel free to contact me.
+</p>
+
+<div class="contact-links">
+
+    <a href="mailto:gopikaanbu0903@gmail.com">Email Me ↗</a>
+
+    <a href="tel:+919787551690">Call Me ↗</a>
+
+    <a href="https://www.linkedin.com/in/gopika-anbu"
+       target="_blank"
+       rel="noopener noreferrer">LinkedIn ↗</a>
+
+    <a href="https://github.com/gopikaanbu1690-sys"
+       target="_blank"
+       rel="noopener noreferrer">GitHub ↗</a>
+
+</div>
+
+</div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+<p>© 2026 Gopika A. All Rights Reserved.</p>
+</footer>
+
+<!-- THEME TOGGLE -->
+
+<script>
+
+const themeBtn = document.getElementById("themeBtn");
+
+themeBtn.addEventListener("click", function() {
+    document.body.classList.toggle("light-theme");
+});
+
+</script>
+
+</body>
+</html>

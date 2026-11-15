@@ -1,0 +1,345 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gopika A - Resume</title>
+
+<style>
+    @page {
+        size: A4;
+        margin: 15mm;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        padding: 20px 0;
+        background: #eeeeee;
+        font-family: "Times New Roman", Times, serif;
+        font-size: 12pt;
+        line-height: 1.15;
+        color: #000;
+    }
+
+    .resume {
+        width: 210mm;
+        min-height: 297mm;
+        margin: 0 auto;
+        padding: 15mm;
+        background: white;
+    }
+
+    /* HEADER */
+    .header {
+        text-align: center;
+        margin-bottom: 18px;
+    }
+
+    .header h1 {
+        font-size: 20pt;
+        margin: 0 0 5px 0;
+    }
+
+    .header p {
+        margin: 3px 0;
+        text-align: center;
+    }
+
+    .header a {
+        color: black;
+        text-decoration: none;
+    }
+
+    /* SECTION HEADINGS */
+    .section {
+        margin-top: 12px;
+    }
+
+    .section h2 {
+        font-size: 14pt;
+        margin: 0 0 6px 0;
+        padding-bottom: 3px;
+        border-bottom: 1px solid black;
+        text-transform: uppercase;
+    }
+
+    p {
+        margin: 3px 0;
+        text-align: justify;
+    }
+
+    .education-item,
+    .project-item,
+    .activity-item,
+    .cert-item {
+        margin-bottom: 7px;
+    }
+
+    .details {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 10px;
+    }
+
+    .details strong:last-child {
+        white-space: nowrap;
+    }
+
+    ul {
+        margin: 4px 0 7px 18px;
+        padding: 0;
+    }
+
+    li {
+        margin-bottom: 3px;
+        text-align: justify;
+    }
+
+    .project-title {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    .project-title strong:last-child {
+        white-space: nowrap;
+    }
+
+    .page-break {
+        page-break-before: always;
+        break-before: page;
+    }
+
+    @media screen {
+        .resume {
+            box-shadow: 0 0 5px #999;
+        }
+    }
+
+    @media print {
+        body {
+            padding: 0;
+            background: white;
+        }
+
+        .resume {
+            width: auto;
+            min-height: auto;
+            margin: 0;
+            padding: 0;
+            box-shadow: none;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="resume">
+
+    <!-- HEADER -->
+    <div class="header">
+        <h1>GOPIKA A</h1>
+
+        <p>B.Tech – Artificial Intelligence and Data Science</p>
+
+        <p>
+            +91 9787551690 |
+            <a href="mailto:gopikaanbu0903@gmail.com">
+                gopikaanbu0903@gmail.com
+            </a> |
+            Rasipuram, Namakkal, Tamil Nadu
+        </p>
+
+        <p>
+            <a href="https://www.linkedin.com/in/gopika-anbu"
+               target="_blank"
+               rel="noopener noreferrer">LinkedIn</a>
+            |
+            <a href="https://github.com/gopikaanbu-dev"
+               target="_blank"
+               rel="noopener noreferrer">GitHub</a>
+        </p>
+    </div>
+
+    <!-- PROFESSIONAL SUMMARY -->
+    <div class="section">
+        <h2>Professional Summary</h2>
+
+        <p>
+            Aspiring Artificial Intelligence and Data Science professional with knowledge
+            of Python, Machine Learning, and Natural Language Processing. Skilled in
+            designing user-friendly web and mobile applications by combining creativity,
+            design thinking, and technology. Eager to apply technical and design skills
+            to real-world projects and grow professionally in AI, Data Science, or UI/UX Design.
+        </p>
+    </div>
+
+    <!-- EDUCATION -->
+    <div class="section">
+        <h2>Education</h2>
+
+        <div class="education-item">
+            <strong>Bachelor of Technology (B.Tech) – Artificial Intelligence and Data Science</strong>
+            <p>Velalar College of Engineering and Technology, Erode</p>
+
+            <div class="details">
+                <span>Anna University</span>
+                <strong>CGPA: 8.02/10 | 2023–2027</strong>
+            </div>
+        </div>
+
+        <div class="education-item">
+            <strong>Higher Secondary Certificate (HSC)</strong>
+            <p>SRV Hi-Tech Matric Higher Secondary School, Namakkal</p>
+
+            <div class="details">
+                <span>State Board</span>
+                <strong>71.6% | 2022–2023</strong>
+            </div>
+        </div>
+
+        <div class="education-item">
+            <strong>Secondary School Leaving Certificate (SSLC)</strong>
+            <p>SRV Hi-Tech Matric Higher Secondary School, Namakkal</p>
+
+            <div class="details">
+                <span>State Board</span>
+                <strong>100% | 2020–2021</strong>
+            </div>
+        </div>
+    </div>
+
+    <!-- TECHNICAL SKILLS -->
+    <div class="section">
+        <h2>Technical Skills</h2>
+
+        <p><strong>Programming Languages:</strong> , Java (OOPs Concept), Python (Basic), MySQL</p>
+        <p><strong>Web Design:</strong> HTML</p>
+        <p><strong>UI/UX Skills:</strong> Figma, Wireframing, Prototyping, User Research, UI Design</p>
+        <p><strong>Data Analysis:</strong> Pandas, NumPy, Microsoft Excel</p>
+        <p><strong>Tools:</strong> VS Code, Eclipse, IDLE, GitHub, Canva</p>
+        <p><strong>Soft Skills:</strong> Problem Solving, Communication, Team Collaboration, Creativity</p>
+    </div>
+
+    <!-- PROJECTS -->
+    <div class="section">
+        <h2>Projects</h2>
+
+        <div class="project-item">
+            <div class="project-title">
+                <strong>TrustWatch AI – Customer Review Sentiment &amp; Trust Analyzer</strong>
+                <strong>March, 2025</strong>
+            </div>
+
+            <p><strong>Technologies:</strong> Python, NLP, Machine Learning</p>
+
+            <ul>
+                <li>Developed an AI-based system to analyze customer reviews and classify positive, negative, and neutral sentiment.</li>
+                <li>Implemented NLP, sentiment analysis, and text classification for customer feedback analysis.</li>
+                <li>Designed rule-based fake and spam review detection using review patterns and keywords.</li>
+                <li>Generated product insights and trust analysis to support e-commerce sellers.</li>
+            </ul>
+        </div>
+
+        <div class="project-item">
+            <div class="project-title">
+                <strong>AI Skin Cancer Detector – Explainable &amp; Longitudinal Skin Lesion Screening</strong>
+                <strong>October, 2026</strong>
+            </div>
+
+            <p><strong>Technologies:</strong> Python, Deep Learning, Computer Vision, Explainable AI</p>
+
+            <ul>
+                <li>Developing an AI-based system to analyze skin lesion images for screening and risk assessment.</li>
+                <li>Implementing image analysis and explainable AI for lesion classification.</li>
+                <li>Integrating patient information and image comparison to monitor lesion changes over time.</li>
+                <li>Supporting interpretable AI-assisted healthcare predictions for early screening and risk monitoring.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- HACKATHONS -->
+    <div class="section">
+        <h2>Hackathons</h2>
+
+        <div class="project-item">
+            <div class="project-title">
+                <strong>Smart India Hackathon – 2025</strong>
+                <strong>VCET, Erode</strong>
+            </div>
+
+            <p><strong>Project:</strong> Hybrid Renewable Dewatering System</p>
+
+            <ul>
+                <li>Developed a hybrid solar-wind dewatering system integrating renewable energy sources for continuous water-pumping operation.</li>
+            </ul>
+        </div>
+
+        <div class="project-item">
+            <div class="project-title">
+                <strong>Smart Motion Hackathon – 2026</strong>
+                <strong>CIT, Chennai</strong>
+            </div>
+
+            <p><strong>Project:</strong> Electric Motor Design Without Rare Earth Magnets</p>
+
+            <ul>
+                <li>Explored a rare-earth-free motor design featuring intelligent sensors, real-time monitoring, thermal stability, and sustainable manufacturing.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- CERTIFICATIONS -->
+    <div class="section">
+        <h2>Certifications &amp; Training</h2>
+
+        <ul>
+            <li>Data Science and Artificial Intelligence Internship Training – YBI Foundation, 2024</li>
+            <li>Basics of Python – Infosys Springboard, 2024</li>
+            <li>Programming Fundamentals using Python – Infosys Springboard, 2025</li>
+            <li>5G Networks and IoT Networks Workshop – Nandha Engineering College, 2025</li>
+            <li>Blockchain and Cloud Computing Workshop – Ways2me, 2024</li>
+            <li>Frontend Using React With CRUD Operation – Kongunadu Engineering College, 2026</li>
+        </ul>
+    </div>
+
+    <!-- LEADERSHIP AND ACTIVITIES -->
+    <div class="section">
+        <h2>Leadership &amp; Activities</h2>
+
+        <div class="activity-item">
+            <strong>Rotaract Club – Office Bearer | 2023–2025</strong>
+
+            <ul>
+                <li>Organized events and community activities, including tree planting, blood donation drives, health screening camps, and essential supply distributions for local orphanages.</li>
+            </ul>
+        </div>
+
+        <div class="activity-item">
+            <strong>Fine Arts Club – Coordinator | 2024–2025</strong>
+
+            <ul>
+                <li>Organized inter-collegiate cultural festivals, art workshops, and gallery exhibitions.</li>
+            </ul>
+        </div>
+
+        <div class="activity-item">
+            <strong>Green Club – Member | 2023–2024</strong>
+
+            <ul>
+                <li>Participated in environmental and community service activities, including tree plantation and awareness programs.</li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
